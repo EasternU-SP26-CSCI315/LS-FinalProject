@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bsfik0kobj7bp"]
+
+[ext_resource type="Script" uid="uid://soj0x6y3suyd" path="res://score_area.gd" id="1_k42b3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gss4k"]
+radius = 40.0
+
+[sub_resource type="Gradient" id="Gradient_k42b3"]
+offsets = PackedFloat32Array(0.11445783, 0.24096386, 0.37951806, 0.5060241, 0.60240966, 0.8433735, 1)
+colors = PackedColorArray(0.6392157, 0, 0.13725491, 1, 1, 1, 1, 1, 0.63915914, 0.00033326936, 0.13842472, 1, 1, 1, 1, 1, 0.6392157, 0, 0.13725491, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gss4k"]
+gradient = SubResource("Gradient_k42b3")
+fill = 1
+fill_from = Vector2(0.47826087, 0.5043478)
+fill_to = Vector2(0.65217394, 0.3043478)
+
+[node name="scoreZone" type="Area2D" unique_id=133365930]
+script = ExtResource("1_k42b3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1945115042 groups=["ball"]]
+shape = SubResource("CircleShape2D_gss4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1677221604]
+position = Vector2(3.7031333, -1)
+scale = Vector2(2.553223, 2.5859375)
+texture = SubResource("GradientTexture2D_gss4k")

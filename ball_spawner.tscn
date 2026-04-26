@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://brrfr0lwxtdw"]
+
+[ext_resource type="Script" uid="uid://wbkvnqfrknj5" path="res://timer.gd" id="1_ep4un"]
+[ext_resource type="PackedScene" uid="uid://cv434sh106fyk" path="res://ball5.tscn" id="2_e004e"]
+
+[node name="spawner" type="Marker2D" unique_id=95185135]
+script = ExtResource("1_ep4un")
+ball_scene = ExtResource("2_e004e")
+
+[node name="Timer" type="Timer" parent="." unique_id=124628038]
+script = ExtResource("1_ep4un")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

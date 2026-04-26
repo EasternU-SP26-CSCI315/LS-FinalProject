@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cxs2sp6gtg8dg"]
+
+[ext_resource type="Shader" uid="uid://sig35wa0a7w2" path="res://autoFlick.gdshader" id="1_a2f1e"]
+[ext_resource type="Script" uid="uid://dg4iyp0stdda8" path="res://autoFlickbutton.gd" id="2_foa2g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_foa2g"]
+shader = ExtResource("1_a2f1e")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/hover_color = Color(0.25, 0.65, 1, 1)
+shader_parameter/pressed_color = Color(0.15, 0.35, 0.7, 1)
+shader_parameter/glow_strength = 0.35
+shader_parameter/pulse_speed = 3.0
+
+[node name="autoFlick" type="Control" unique_id=510686575]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1912131815]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 646.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=860101416]
+material = SubResource("ShaderMaterial_foa2g")
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 120
+text = "Auto OFF"
+script = ExtResource("2_foa2g")
+
+[node name="Timer" type="Timer" parent="VBoxContainer/Button" unique_id=912020468]
+process_callback = 0
+wait_time = 0.5
+
+[connection signal="timeout" from="VBoxContainer/Button/Timer" to="VBoxContainer/Button" method="_on_timer_timeout"]

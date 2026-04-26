@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cvylvhqc8fkiw"]
+
+[ext_resource type="Script" uid="uid://d2ekeibs6o8t2" path="res://ballspawn.gd" id="1_e62wq"]
+[ext_resource type="Script" uid="uid://bflkwksipkfvc" path="res://spawn_timer.gd" id="1_tuwkf"]
+
+[node name="ballspawn" type="Marker2D" unique_id=1359939750]
+script = ExtResource("1_e62wq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1082943800]
+process_callback = 0
+autostart = true
+script = ExtResource("1_tuwkf")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

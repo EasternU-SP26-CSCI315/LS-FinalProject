@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bqk7n0d3g40qk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3d8p3"]
+
+[sub_resource type="Gradient" id="Gradient_veiyh"]
+offsets = PackedFloat32Array(0.55421686, 0.78313255)
+colors = PackedColorArray(0.14794126, 0.81821537, 0.9024857, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_st0ss"]
+gradient = SubResource("Gradient_veiyh")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.53913045, 0.24782608)
+
+[sub_resource type="Gradient" id="Gradient_cbx31"]
+offsets = PackedFloat32Array(0.5481928, 0.72289157)
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3d8p3"]
+gradient = SubResource("Gradient_cbx31")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.62608695, 0.26086956)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_st0ss"]
+
+[node name="Node2D" type="Node2D" unique_id=967340539]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1902355829 groups=["balls5"]]
+shape = SubResource("CircleShape2D_3d8p3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1807697692]
+texture = SubResource("GradientTexture2D_st0ss")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1148755198]
+texture = SubResource("GradientTexture2D_3d8p3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=255364489 groups=["balls10"]]
+shape = SubResource("CircleShape2D_st0ss")

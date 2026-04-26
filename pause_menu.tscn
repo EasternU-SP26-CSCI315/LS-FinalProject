@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://8tav5tq0hxh2"]
+
+[ext_resource type="Script" uid="uid://b7rpd0hj4qbl8" path="res://pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="Shader" uid="uid://dcmqh6iejp1oh" path="res://blur.gdshader" id="2_05uyy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p81d2"]
+shader = ExtResource("2_05uyy")
+shader_parameter/lod = 0.6000000285
+
+[sub_resource type="Animation" id="Animation_2nc7s"]
+resource_name = "blur_anim"
+length = 0.3
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d3xb4"]
+_data = {
+&"blur_anim": SubResource("Animation_2nc7s")
+}
+
+[node name="PauseMenu" type="Control" unique_id=193215081]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwcfo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=696791457]
+material = SubResource("ShaderMaterial_p81d2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9999.0
+offset_top = -4910.0
+offset_right = 8405.0
+offset_bottom = 5937.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1944162572]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -322.99997
+offset_right = -924.0
+offset_bottom = -193.79999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1665511879]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2061950683]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer" unique_id=579309068]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Restart"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=978105018]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=393896745]
+libraries/ = SubResource("AnimationLibrary_d3xb4")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

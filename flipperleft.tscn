@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d01n1rx3aitmx"]
+
+[ext_resource type="Script" uid="uid://cmtdwlivg2opg" path="res://flipperleft.gd" id="1_7m5fg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7m5fg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7q6k"]
+size = Vector2(140, 40)
+
+[sub_resource type="Gradient" id="Gradient_7m5fg"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.27635953, 0.5911535, 0.5399933, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dyodu"]
+gradient = SubResource("Gradient_7m5fg")
+width = 2
+height = 2
+
+[node name="LFlipper" type="RigidBody2D" unique_id=1523288377]
+physics_material_override = SubResource("PhysicsMaterial_7m5fg")
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_7m5fg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=761919316]
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_g7q6k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1523787678]
+position = Vector2(60, 0)
+scale = Vector2(70.223076, 20.375002)
+texture = SubResource("GradientTexture2D_dyodu")

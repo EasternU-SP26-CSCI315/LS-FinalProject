@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://gwubqr1so1es"]
+
+[ext_resource type="Script" uid="uid://cmtdwlivg2opg" path="res://flipperleft.gd" id="1_qmqmj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qmqmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7q6k"]
+size = Vector2(98, 17)
+
+[node name="Flipper" type="RigidBody2D" unique_id=1523288377]
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_qmqmj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1523787678]
+position = Vector2(39, 0)
+scale = Vector2(98, 18)
+texture = SubResource("PlaceholderTexture2D_qmqmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=761919316]
+position = Vector2(39, 0)
+shape = SubResource("RectangleShape2D_g7q6k")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1781600614]
+position = Vector2(-1, 0)

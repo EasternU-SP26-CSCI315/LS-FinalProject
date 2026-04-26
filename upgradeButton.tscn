@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bb25dmh1q83p2"]
+
+[ext_resource type="Script" uid="uid://dateesb1hxp3" path="res://upgradeButton.gd" id="1_4qdga"]
+
+[node name="upgrade" type="Button" unique_id=634620900]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Press to upgrade score!!!"
+script = ExtResource("1_4qdga")

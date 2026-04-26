@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cmoc7cpvo8nu3"]
+
+[ext_resource type="Script" uid="uid://bhgnykc28hbsp" path="res://currency_label.gd" id="1_8s5qd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndw6u"]
+font_size = 400
+
+[node name="scoreLabel" type="Control" unique_id=193937151]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1329.0
+offset_right = 2077.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrencyLabel" type="Label" parent="." unique_id=344587453]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_ndw6u")
+horizontal_alignment = 1
+script = ExtResource("1_8s5qd")
