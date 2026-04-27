@@ -1,0 +1,10 @@
+This game is supposed to be a hybrid of and idle game and a pinball machine. The core gameplay loop uses flickers to flick away balls that drop from the ceiling of the arena, targeting bullseye zones in order to score points.
+If the ball drops behind the flickers, it will fall out of the arena, falling out of the screen and into a zone where it will be deleted.
+In addition to the point mechanic, there is an upgrade buttton that increases the payout amount that each ball gives you whenever one enters a score zone. 
+There are three types of balls, each of them weighted: yellow, blue, and red. Yellow is the most common, blue is the 2nd most, and red is the rarest. The rarer they are the more points they will award when hitting a zone.
+I originally wanted to include an upgrade system that would increase the amount of balls spawned, spawn faster, indivdual upgrades that would increase payout, and even one that would add extra flickers to the sides of the arena.
+However, as time went on and even some of the simple features of the game became very difficult to install, I had to leave behind a lot of the content I had planned, including a complete gameplay loop. I was able to add when with the addition of the incremental upgrade button however.
+I do wish I was either a(more familiar with godot or b(chose something much more simple like a 2d platformer, because i'm not super satisfied with the fact that i had to take out so much content from the original game just because a bunch of simple things would not work.
+For example, i was trying to connect a timer to a node above it, and every time i would go into the signals tab, select the node above the timer, and press connect, it would connect the signal to the tiemr instead. the on timer timeout function would always just appear in the timer script. super wierd.
+i ended up having to delete those nodes and after recreating them, the connection process worked, so i dont know what happened there.
+anyway I did end up enjoying the process when it was working with me and not against me, and i am mostly satisfied with what i was able to produce
